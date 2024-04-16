@@ -1,0 +1,2 @@
+class Listitem < ApplicationRecord
+end
