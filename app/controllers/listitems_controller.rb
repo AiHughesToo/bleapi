@@ -15,7 +15,7 @@ class ListitemsController < ApplicationController
 
   # POST /listitems
   def create
-    p listItem_params.item
+    p listitem_params.item
     @listitem = Listitem.new(listitem_params)
 
     if @listitem.save
