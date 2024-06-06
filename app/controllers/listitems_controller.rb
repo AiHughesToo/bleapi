@@ -15,7 +15,8 @@ class ListitemsController < ApplicationController
 
   # POST /listitems
   def create
-    p wh_params.item
+   p "in the create method"
+    p params
     @listitem = Listitem.new(listitem_params)
 
     if @listitem.save
@@ -60,8 +61,5 @@ class ListitemsController < ApplicationController
       params.require(:listitem).permit(:item, :snumber, :name)
     end
 
-    def wh_params
-      params.permit(:item, :snumber, :name)
-    end
 
 end
