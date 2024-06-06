@@ -31,10 +31,9 @@ class ListitemsController < ApplicationController
     p "in the create method"
     p params
     p"after"
-    p parameters
-    p parameters.item
+    p params.item
      @listitem = Listitem.new()
-     @listitem.item = parameters.item
+     @listitem.item = params.item
  
      if @listitem.save
        render json: @listitem, status: :created, location: @listitem
