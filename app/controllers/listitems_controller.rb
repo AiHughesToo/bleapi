@@ -30,10 +30,10 @@ class ListitemsController < ApplicationController
    def keap_hook
     p "in the create method"
     p params
-    p"after"
-    p params.item
+    p "after"
+    p params[:item]
      @listitem = Listitem.new()
-     @listitem.item = params.item
+     @listitem.item = params[:item]
  
      if @listitem.save
        render json: @listitem, status: :created, location: @listitem
