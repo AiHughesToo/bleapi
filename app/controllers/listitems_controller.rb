@@ -28,10 +28,6 @@ class ListitemsController < ApplicationController
 
    # POST /listitems
    def keap_hook
-    p "in the create method"
-    p params
-    p "after"
-    p params[:item]
      @listitem = Listitem.new()
      @listitem.item = params[:item]
  
