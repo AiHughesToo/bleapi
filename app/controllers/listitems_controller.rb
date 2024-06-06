@@ -26,6 +26,23 @@ class ListitemsController < ApplicationController
     end
   end
 
+   # POST /listitems
+   def keap_hook
+    p "in the create method"
+    p params
+    p"after"
+    p parameters
+    p parameters.item
+     @listitem = Listitem.new()
+     @listitem.item = parameters.item
+ 
+     if @listitem.save
+       render json: @listitem, status: :created, location: @listitem
+     else
+       render json: @listitem.errors, status: :unprocessable_entity
+     end
+   end
+
   # PATCH/PUT /listitems/1
   def update
     if @listitem.update(listitem_params)
