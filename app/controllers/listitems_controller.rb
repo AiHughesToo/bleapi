@@ -15,8 +15,7 @@ class ListitemsController < ApplicationController
 
   # POST /listitems
   def create
-   p "in the create method"
-    p params
+  
     @listitem = Listitem.new(listitem_params)
 
     if @listitem.save
@@ -53,7 +52,8 @@ class ListitemsController < ApplicationController
   end
 
   def validate
-    item = Listitem.find_by(item: params[:item])
+    email_item = "app@magnawavepemf.com"
+    item = Listitem.find_by(item: email_item)
     if item 
       render json: item
     else
